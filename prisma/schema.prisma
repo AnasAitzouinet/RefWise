@@ -1,0 +1,217 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(uuid())
+  // Google / LinkedIn
+  google_id     String?   @unique
+  linkedin_id   String?   @unique
+  verified      Boolean   @default(false)
+  emailVerified DateTime?
+
+  // User
+  fullname String?
+  name     String?
+  email    String    @unique
+  image    String?
+  password String?
+  avatar   String?
+  phone    String?
+  type     UserType?
+
+  // Candidate
+  candidateId String?     @unique
+  candidate   Candidates?
+
+  // Referee
+  refereeId String?   @unique
+  referee   Referees?
+
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  Account    Account[]
+}
+
+enum ConnectionType {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+model Connections {
+  id String @id @default(uuid())
+
+  connectionStatus ConnectionType
+
+  connectedCandidate Candidates @relation(fields: [connectedCandidateId], references: [id])
+  connectedByReferee Referees   @relation(fields: [connectedByRefereeId], references: [id])
+
+  connectedCandidateId String
+  connectedByRefereeId String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Candidates {
+  id String @id @default(uuid())
+
+  job_title   String?
+  description String?
+
+  speciality      String?
+  employment_type JobType?
+
+  experience Int?
+  location   String?
+
+  resume String?
+  skills String[]
+
+  user_id String @unique
+  user    User   @relation(fields: [user_id], references: [id])
+
+  JobsAppliedFor Jobs[]
+
+  created_at  DateTime      @default(now())
+  updated_at  DateTime      @updatedAt
+  Connections Connections[]
+}
+
+model Referees {
+  id            String  @id @default(uuid())
+  company       String?
+  position      String?
+  department    String?
+  JobsRefereed  Int?    @default(0)
+  HiredRefereed Int?    @default(0)
+
+  user_id String @unique
+  user    User   @relation(fields: [user_id], references: [id])
+
+  Jobs Jobs[]
+
+  created_at    DateTime        @default(now())
+  updated_at    DateTime        @updatedAt
+  Advertisments Advertisments[]
+  Connections   Connections[]
+}
+
+model Jobs {
+  id          String   @id @default(uuid())
+  title       String
+  job_title   String
+  description String
+  type        JobType
+  location    String
+  SalaryRange Int[]
+  status      Boolean  @default(true)
+  speciality  String
+  experience  Int
+  benefits    String[]
+
+  number_of_applicants Int?
+  applicationsDeadline DateTime
+
+  advertised Boolean @default(false)
+
+  Apllicants Candidates[]
+
+  HiringManagerID String
+  HiringManager   Referees @relation(fields: [HiringManagerID], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Advertisments   Advertisments? @relation(fields: [advertismentsId], references: [id])
+  advertismentsId String?
+}
+
+model Advertisments {
+  id          String  @id @default(uuid())
+  title       String
+  description String
+  duration    Int
+  status      Boolean
+
+  StartDate DateTime
+  EndDate   DateTime
+
+  Jobs        Jobs[]
+  byRefereeId String
+  ByReferee   Referees @relation(fields: [byRefereeId], references: [id])
+  created_at  DateTime @default(now())
+}
+
+model Comapnies {
+  id           String @id @default(uuid())
+  name         String
+  location     String
+  speciality   String
+  description  String
+  specialityId Int
+}
+
+enum UserType {
+  CANDIDATE
+  REFEREES
+}
+
+// model Speciality {
+//   id   Int    @id @default(autoincrement())
+//   name String
+
+//   jobTitles  JobTitle[]
+//   Candidates Candidates[]
+
+//   Jobs      Jobs[]
+//   Comapnies Comapnies[]
+// }
+
+// model JobTitle {
+//   id     Int      @id @default(autoincrement())
+//   name   String
+//   skills String[]
+
+//   Candidates Candidates[]
+
+//   Speciality   Speciality? @relation(fields: [specialityId], references: [id])
+//   specialityId Int?
+// }
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+enum JobType {
+  FullTime
+  PartTime
+  Contract
+  Internship
+  Temporary
+  Remote
+}

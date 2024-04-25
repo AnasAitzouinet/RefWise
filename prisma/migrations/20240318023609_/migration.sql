@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Referees" ALTER COLUMN "company" DROP NOT NULL,
+ALTER COLUMN "position" DROP NOT NULL,
+ALTER COLUMN "department" DROP NOT NULL,
+ALTER COLUMN "JobsRefereed" SET DEFAULT 0,
+ALTER COLUMN "HiredRefereed" SET DEFAULT 0;
