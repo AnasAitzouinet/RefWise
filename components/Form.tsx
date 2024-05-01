@@ -111,7 +111,7 @@ export function PopUpForm({ children }: FormProps) {
               {loading ? <Loader className="animate-spin" size={20} /> : 'Join Now'}
             </Button>
             <DialogClose>
-              <Button id="cancel" className="bg-neutral-900">
+              <Button id="cancel" type="button" className="bg-neutral-900">
                 Cancel
               </Button>
             </DialogClose>
