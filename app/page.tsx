@@ -6,7 +6,9 @@ import Reveal from '@/components/Reveal';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import Stats from "@/components/Stats";
 import How from "@/components/How";
-
+import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster"
+import { PopUpForm } from "@/components/Form";
 export default function Home() {
   const refx = useRef(null);
   const inViewx = useInView(refx, { once: true });
@@ -18,7 +20,8 @@ export default function Home() {
     }
   }, [inViewx]);
   return (
-    <main className="">
+    <main className="overflow-x-hidden">
+      <Toaster />
       <Hero />
       <section className="lg:h-[87vh] lg:w-full relative flex lg:flex-row flex-col justify-center items-center px-[10%]  ">
         <img src="/Group.png" alt="" className="absolute top-0 left-0 object-cover" />
@@ -43,15 +46,18 @@ export default function Home() {
                 Finding someone to refer shouldn’t be a hassle.
               </p>
             </Reveal>
-
-            <Button className='lg:text-xl lg:px-8 lg:py-6 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a] self-start'>
-              Refer someone
-            </Button>
+            <PopUpForm>
+              <Button className='lg:text-xl lg:px-8 lg:py-6 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a] self-start'>
+                Refer someone
+              </Button>
+            </PopUpForm>
           </div>
         </div>
       </section>
       <Stats />
-       <How />
+      <How />
+
+      <Footer />
     </main>
   );
 }

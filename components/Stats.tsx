@@ -4,7 +4,6 @@ const stats = [
     { id: 2, name: 'companies have a referral scheme', value: '3.7x', number: 3.7 },
     { id: 3, name: 'more chance to hire a candidate through referrals', value: '46,000', number: 46000 },
 ]
-import { useEffect, useState } from "react"
 import Reveal from "./Reveal"
 import { Plus, PlusIcon } from "lucide-react"
 
@@ -25,7 +24,7 @@ export default function Stats() {
                     </h1>
                 </div>
                 <div className="grid
-                 lg:grid-cols-3 lg:grid-rows-none grid-rows-3  space-y-5 lg:space-y-0 divide-y lg:divide-x lg:divide-y-0 divide-black ">
+                 lg:grid-cols-3 lg:grid-rows-none grid-rows-3  space-y-5 lg:space-y-0 divide-y lg:divide-x lg:divide-y-0 divide-gray-300 ">
                     {
                         stats.map(stat => (
                             <div key={stat.id} className="grid grid-rows-2 place-items-center  w-full h-full py-1">
