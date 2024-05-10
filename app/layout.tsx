@@ -4,8 +4,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
  
 export const metadata: Metadata = {
-  title: "RefWise",
-  description: "Refer a friend and get rewarded",
+  title: "RefWise - Referring someone shouldn’t be a hassle",
+  description: "RefWise helps you earn amazing rewards by simply referring friends. Sign up now and start benefiting from our unique referral program.",
+  // Add more relevant metadata below
+  keywords: "RefWise, referral rewards, friend referral, earn rewards, best referral program, rewards program, referral bonus, refer and earn, loyalty program, referral system, referral incentive, reward platform",
+  authors: [{ name: "RefWise" ,url: "https://www.refwise.co"}],
 };
 
 export default async function RootLayout({

@@ -106,12 +106,12 @@ export function PopUpForm({ children }: FormProps) {
               disabled={loading}
               id="company" onChange={(e) => setUser({ ...user, company: e.target.value })} placeholder="Your company name" />
           </div>
-          <DialogFooter>
-            <Button type="submit" className="bg-rose-500">
+          <DialogFooter className="flex-col justify-center gap-y-2 my-2 w-full">
+            <Button type="submit" className="bg-rose-500 hover:bg-rose-700 w-full">
               {loading ? <Loader className="animate-spin" size={20} /> : 'Join Now'}
             </Button>
             <DialogClose>
-              <Button id="cancel" type="button" className="bg-neutral-900">
+              <Button id="cancel" type="button" className="bg-neutral-900 w-full">
                 Cancel
               </Button>
             </DialogClose>

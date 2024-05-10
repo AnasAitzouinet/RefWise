@@ -37,19 +37,19 @@ export default function Hero() {
 
             <section className='w-screen h-full flex md:flex-row flex-col justify-center items-center px-5 md:px-[10%]'>
                 <div className='md:w-[55%] h-full flex flex-col items-center   justify-start py-24 space-y-8 px-4 -mt-20 md:-mt-12'>
-                    <Reveal width='100%'>
-                        <h1 className='lg:text-[56px] xl:text-[66px]  text-[30px] md:text-[37px]  font-black w-full leading-tight'>
+                    <Reveal  >
+                        <h1 className='lg:text-[50px] xl:text-[60px]  text-[30px] md:text-[37px]  font-black w-full leading-tight lg:leadi ng-'>
                             <span className='text-[#FFD04F]'>Earn up to £3,500</span> <br />
                             for each candidate referral.</h1>
 
-                    </Reveal>
+                    </Reveal>   
                     <Reveal width='100%'>
-                        <p className='lg:text-[20px] text-[14px] pr-10 font-medium lg:pr-40'>Employers in the UK payout referral bonuses between £800 and £3,500 for a successful hire. Become a mentor and referee at your company.</p>
+                        <p className='lg:text-[18px] text-[14px] pr-10 font-medium lg:pr-0'>Employers in the UK payout referral bonuses between £800 and £3,500 for a successful hire. Become a mentor and referee at your company.</p>
                     </Reveal>
                     <PopUpForm>
 
                         <Button className='lg:text-xl lg:py-6 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a]  self-start'>
-                            Become a referee now
+                        Get early access
                         </Button>
                     </PopUpForm>
                 </div>

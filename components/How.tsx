@@ -11,7 +11,7 @@ import { PopUpForm } from './Form'
 const steps = [
     {
         id: 1,
-        title: 'Connect your LinkedIn',
+        title: 'Login with LinkedIn',
         description: 'Connect your LinkedIn account to get started. We will never post anything on your behalf.',
         number: './1.svg'
     },
@@ -38,7 +38,7 @@ const steps = [
 
 export default function How() {
     return (
-        <div className='w-screen flex flex-col justify-center items-start text-[#1B2847] px-[10%] space-y-5 lg:px-[8%]' >
+        <div className='w-screen flex flex-col justify-center items-start text-[#1B2847] px-[10%] space-y-5 lg:px-[8%] pt-[16%] lg:pt-0' >
             <h1 className='lg:text-[58px] text-[25px] font-extrabold'>
                 <Reveal>
                     We’ve streamlined your  <span className='text-pink-500'>  referral </span>
@@ -74,7 +74,7 @@ export default function How() {
             </div>
             <PopUpForm>
                 <Button className='w-3/4 py-5 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a] self-center  lg:w-1/4'>
-                    Refer Candidates now
+                Get early access
                 </Button>
             </PopUpForm>
         </div>

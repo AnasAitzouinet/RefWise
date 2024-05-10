@@ -1,8 +1,8 @@
 "use client"
 const stats = [
-    { id: 1, name: 'average referral bonus', value: '£1,000', number: 1000 },
-    { id: 2, name: 'companies have a referral scheme', value: '3.7x', number: 3.7 },
-    { id: 3, name: 'more chance to hire a candidate through referrals', value: '46,000', number: 46000 },
+    { id: 1, name: 'average referral bonus', value: '£1,200', number: 1000 },
+    { id: 2, name: 'companies have a referral scheme', value: '75%', number: 75 },
+    { id: 3, name: 'more chance to hire a candidate through referrals', value: '3.7x', number: 3.7 },
 ]
 import Reveal from "./Reveal"
 import { Plus, PlusIcon } from "lucide-react"

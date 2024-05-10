@@ -21,7 +21,7 @@ export default function Reveal({ children, width = 'fit-content' }: RevealProps)
         }
     }, [inView]);
     return (
-        <div ref={ref} style={{ position: 'relative', width, overflow: "hidden" }}>
+        <div ref={ref} style={{ position: 'relative', width}}>
             <motion.div
                 variants={{
                     hidden: { opacity: 0, y: 75 },
@@ -29,7 +29,7 @@ export default function Reveal({ children, width = 'fit-content' }: RevealProps)
                 }}
                 initial='hidden'
                 animate={controls}
-                transition={{ duration: 0.5, delay: 0.25 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
             >
                 {children}
             </motion.div>

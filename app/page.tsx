@@ -38,16 +38,16 @@ export default function Home() {
             src="/BlackHero.webp" alt="" className="object-cover z-20 lg:w-[45%]" />
           <div className="flex-col flex justify-start items-start lg:space-y-8 space-y-4  pt-10    ">
             <Reveal>
-              <h1 className="lg:text-[58px] text-[25px] font-extrabold leading-tight"><span className="text-[#FF5D7D]"> Refer Someone in</span> <br /> your circle for a job</h1>
+              <h1 className="lg:text-[58px] text-[25px] font-extrabold leading-tight z-50"><span className="text-[#FF5D7D]"> Refer Someone in</span> <br /> your circle for a job</h1>
             </Reveal>
             <Reveal>
 
-              <p className="font-medium lg:text-xl text-[#646464]">
-                Finding someone to refer shouldn’t be a hassle.
+              <p className="font-medium lg:text-xl text-[#646464] z-50">
+              Referring someone shouldn’t be a hassle.
               </p>
             </Reveal>
             <PopUpForm>
-              <Button className='lg:text-xl lg:px-8 lg:py-6 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a] self-start'>
+              <Button className='lg:text-xl lg:px-8 lg:py-6 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a] self-start z-50'>
                 Refer someone
               </Button>
             </PopUpForm>

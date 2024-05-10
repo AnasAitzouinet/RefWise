@@ -1,3 +1,4 @@
+import { ThankYouEmail } from "@/Actions";
 import prisma from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
@@ -25,6 +26,7 @@ export async function POST(req: Request, res: NextApiResponse) {
                 companyName: company
             }
         });
+        const ThankYou = await ThankYouEmail({ email, name });
         return Response.json({ message: `${name} Has Joined RefWise successfully` });
     } catch (err) {
         console.log(err);
