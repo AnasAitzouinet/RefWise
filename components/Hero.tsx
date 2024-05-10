@@ -20,12 +20,12 @@ export default function Hero() {
             className='lg:h-[87vh] pb-8 w-screen bg-[#1B2847] flex flex-col items-center justify-start text-white relative'
         >
             <img src="/Particles.png" alt="particles in the backgorund" className='absolute right-0 bottom-0  animate-pulse' />
-            <img src="/Particles-left.png" alt="particles in the backgorund" className='absolute top-0 left-0 animate-pulse' />
+            <img src="/Particles-left.png" alt="particles in the backgorund" className='absolute top-0 left-0 animate-pulse z-0' />
 
             <header className='w-screen h-[15%] py-5'>
                 <nav className='flex justify-between px-[10%]  items-center '>
                     {/* <h1 className='lg:text-[40px] text-[24px] font-bold'>RefWise</h1> */}
-                    <img src="/logo.png" alt="logo" className='lg:w-[13%] md:w-[17%] w-[40%] ' />
+                    <img src="/logo.png" alt="logo" className='lg:w-[13%] md:w-[17%] w-[40%] z-50' />
                     <PopUpForm>
 
                         <Button className='lg:text-xl  py-2 lg:px-7 rounded-full bg-[#FF5D7D] hover:bg-[#b8435a] z-50 '>

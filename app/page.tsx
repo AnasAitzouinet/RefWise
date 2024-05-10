@@ -24,7 +24,7 @@ export default function Home() {
       <Toaster />
       <Hero />
       <section className="lg:h-[87vh] lg:w-full relative flex lg:flex-row flex-col justify-center items-center px-[10%]  ">
-        <img src="/Group.png" alt="" className="absolute top-0 left-0 object-cover" />
+        <img src="/Group.png" alt="" className="absolute top-0 left-0 object-cover z" />
         <div className="flex justify-center lg:flex-row flex-col-reverse  items-center lg:space-x-36   w-full">
           <motion.img
             ref={refx}
