@@ -18,6 +18,14 @@ export async function POST(req: Request, res: NextApiResponse) {
         if (!isValid.success) {
             return Response.json({ error: isValid.error });
         }
+        const existingUser = await prisma.user.findUnique({
+            where: {
+                email
+            }
+        });
+        if (existingUser) {
+            return Response.json({ error: 'This email is already in use , try another one!' });
+        }
         const user = await prisma.user.create({
             data: {
                 name,
@@ -30,6 +38,7 @@ export async function POST(req: Request, res: NextApiResponse) {
         return Response.json({ message: `${name} Has Joined RefWise successfully` });
     } catch (err) {
         console.log(err);
+    
         return Response.json({ error: 'Something went wrong' });
     }
 }

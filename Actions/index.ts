@@ -17,15 +17,20 @@ export const ThankYouEmail = async ({ email, name }: z.infer<typeof schema>) => 
     const resend = new Resend(RESEND_API_KEY);
 
     const { data, error } = await resend.emails.send({
-        from: 'onboarding@resend.dev',
+        from: 'noreply@refwise.co',
         to: email,
         subject: `Thank you for joining RefWise`,
-        text: `
-        Hi ${name},
-        Thank you for joining RefWise. We will keep you updated on new features and updates.
+        html: `
+        Hello ${name}, <br/>
+        Thank you for registering with RefWise. <br/>
+        My name is Talal and I'll be your main contact at RefWise for any questions and/or suggestions. <br/>
+        You have officially joined the exclusive club of people who earn their referral bonus after referring someone through our platform. Welcome! <br/>
+        RefWise will launch in July and in the meantime we will keep you updated with all the new features and relevant information. <br/>
+        If you have any questions about the platform, I am happy to chat about it. You can book a time in my calendar below:
 
-        Best,
-        RefWise Team
+        <a href="https://calendly.com/talal-refwise/15min">Book a time</a>
+        Best regards, <br/>
+        Talal
         `,
     });
 

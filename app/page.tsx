@@ -9,6 +9,7 @@ import How from "@/components/How";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster"
 import { PopUpForm } from "@/components/Form";
+import Faq from "@/components/Faq";
 export default function Home() {
   const refx = useRef(null);
   const inViewx = useInView(refx, { once: true });
@@ -56,7 +57,7 @@ export default function Home() {
       </section>
       <Stats />
       <How />
-
+            <Faq />
       <Footer />
     </main>
   );

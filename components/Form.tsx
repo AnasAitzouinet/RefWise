@@ -31,7 +31,7 @@ export function PopUpForm({ children }: FormProps) {
     company: ''
   })
   const [loading, setLoading] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  // const [submitted, setSubmitted] = useState(false)
 
 
   const { toast } = useToast()
@@ -39,9 +39,9 @@ export function PopUpForm({ children }: FormProps) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if(submitted) return
+    // if(submitted) return
     setLoading(true)
-    setSubmitted(true)
+    // setSubmitted(true)
     try {
       const res = await fetch('/api/JoinUs', {
         method: 'POST',
