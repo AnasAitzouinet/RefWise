@@ -28,7 +28,7 @@ export const ThankYouEmail = async ({ email, name }: z.infer<typeof schema>) => 
         RefWise will launch in July and in the meantime we will keep you updated with all the new features and relevant information. <br/>
         If you have any questions about the platform, I am happy to chat about it. You can book a time in my calendar below:
 
-        <a href="https://calendly.com/talal-refwise/15min">Book a time</a>
+        <a href="https://calendly.com/refwise/30mins">Book a time</a>
         Best regards, <br/>
         Talal
         `,
