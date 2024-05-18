@@ -8,18 +8,15 @@ export default function Faq() {
                 <div className="mx-auto max-w-3xl space-y-6">
                     <div className="space-y-2 text-center">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                            Frequently Asked Questions
+                            FAQs
                             </h2>
-                        <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                            Get answers to the most common questions about our product.
-                        </p>
                     </div>
-                    <Accordion collapsible type="single">
+                    <Accordion collapsible type="single" className="px-3 lg:px-0">
                         <AccordionItem value="why">
-                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
+                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium text-start">
                                 Why would my company pay me a referral bonus?
                             </AccordionTrigger>
-                            <AccordionContent className="space-y-4 pt-4">
+                            <AccordionContent className="space-y-4 pt-4 ">
                                 <p className="text-gray-500 dark:text-gray-400">
                                     Most UK and worldwide companies highly value job referrals and you may ask yourself why that is. First of all you make it easier to recruit a new talent in your company by referring someone. Secondly, your candidate will already be briefed and evaluated by yourself on the actual job and your company puts more trust in you since you are already employed. There are various other reasons for companies to pay a referral bonus to their employees for a job referral such as time and efficiency.
                                 </p>
@@ -27,7 +24,7 @@ export default function Faq() {
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="bonus">
-                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
+                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium text-start">
                                 How does my company pay me the referral bonus?
                             </AccordionTrigger>
                             <AccordionContent className="space-y-4 pt-4">
@@ -37,7 +34,7 @@ export default function Faq() {
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="starting">
-                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
+                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium text-start">
                                 How do I start referring candidates?
                             </AccordionTrigger>
                             <AccordionContent className="space-y-4 pt-4">
@@ -62,7 +59,7 @@ export default function Faq() {
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="prices">
-                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
+                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium text-start">
                                 Is this platform free?
                             </AccordionTrigger>
                             <AccordionContent className="space-y-4 pt-4">
@@ -72,7 +69,7 @@ export default function Faq() {
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="eligibilty">
-                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
+                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium text-start">
                                 Am I eligible to become a referee?
                             </AccordionTrigger>
                             <AccordionContent className="space-y-4 pt-4">
@@ -82,7 +79,7 @@ export default function Faq() {
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="privacy">
-                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium">
+                            <AccordionTrigger className="flex items-center justify-between text-lg font-medium text-start">
                                 How does the platform ensure data security and privacy?
                             </AccordionTrigger>
                             <AccordionContent className="space-y-4 pt-4">
